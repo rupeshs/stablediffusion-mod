@@ -237,7 +237,8 @@ def main_loop(t2i, outdir, prompt_as_dir, parser, infile):
             current_outdir = opt.outdir
         elif prompt_as_dir:
             # sanitize the prompt to a valid folder name
-            subdir = path_filter.sub('_', opt.prompt)[:name_max].rstrip(' .')
+            _subdir = path_filter.sub("_", opt.prompt)[:name_max].rstrip(" .")
+            subdir = "_".join(re.split(":| ", _subdir))
 
             # truncate path to maximum allowed length
             # 27 is the length of '######.##########.##.png', plus two separators and a NUL
