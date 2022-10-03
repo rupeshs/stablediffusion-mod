@@ -46,7 +46,9 @@ class InitImageResizer():
             return im.copy()
         
         # otherwise resize the original image so that it fits inside the bounding box
-        resized_image = self.image.resize((rw,rh),resample=Image.Resampling.LANCZOS)
+        #resized_image = self.image.resize((rw,rh),resample=Image.Resampling.LANCZOS)
+        resized_image = self.image.resize((width, height),resample=Image.Resampling.LANCZOS)
+
         return resized_image
 
 def make_grid(image_list, rows=None, cols=None):

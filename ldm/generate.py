@@ -661,12 +661,13 @@ class Generate:
         print(
             f'>> image will be resized to fit inside a box {w}x{h} in size.'
         )
-        if image.width > image.height:
-            h   = None   # by setting h to none, we tell InitImageResizer to fit into the width and calculate height
-        elif image.height > image.width:
-            w   = None   # ditto for w
-        else:
-            pass
+        # Image to image fit image issue ,Not keeping aspect ratio
+        # if image.width > image.height:
+        #     h   = None   # by setting h to none, we tell InitImageResizer to fit into the width and calculate height
+        # elif image.height > image.width:
+        #     w   = None   # ditto for w
+        # else:
+        #     pass
         image = InitImageResizer(image).resize(w,h)   # note that InitImageResizer does the multiple of 64 truncation internally
         print(
             f'>> after adjusting image dimensions to be multiples of 64, init image is {image.width}x{image.height}'
