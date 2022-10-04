@@ -17,8 +17,8 @@ def detect_processor():
     elif hasattr(torch.backends, 'mps') and torch.backends.mps.is_available():
         print('DEVICE,MPS backend detected')
     else: 
-       print("DEVICE,CPU detected" )
+       print("DEVICE,GPU not found" )
 try:
     detect_processor()
 except:
-    print("DEVICE,Failed to get device name")
+    print("DEVICE,Failed to get device info")
