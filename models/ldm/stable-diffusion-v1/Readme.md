@@ -1,0 +1,1 @@
+Download and place stable diffusion 1.4 model here
