@@ -1,0 +1,1 @@
+git archive --format zip --output stablediffusion.zip main
